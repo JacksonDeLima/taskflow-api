@@ -1,10 +1,10 @@
-# 🚀 TaskFlow API
+#  TaskFlow API
 
 API RESTful para gerenciamento de usuários e tarefas com autenticação JWT e controle de acesso.
 
 ---
 
-## 🧠 Tecnologias
+##  Tecnologias
 
 - Java 17+
 - Spring Boot
@@ -16,7 +16,7 @@ API RESTful para gerenciamento de usuários e tarefas com autenticação JWT e c
 
 ---
 
-## 🔐 Funcionalidades
+##  Funcionalidades
 
 ### Autenticação
 - Registro de usuário
@@ -35,7 +35,7 @@ API RESTful para gerenciamento de usuários e tarefas com autenticação JWT e c
 
 ---
 
-## 🔑 Segurança
+##  Segurança
 
 - Autenticação via JWT
 - Endpoints protegidos
@@ -43,7 +43,7 @@ API RESTful para gerenciamento de usuários e tarefas com autenticação JWT e c
 
 ---
 
-## 📦 Endpoints
+##  Endpoints
 
 ### Auth
 
@@ -64,7 +64,7 @@ DELETE /tasks/{id}
 
 ---
 
-## ▶️ Como rodar o projeto
+##  Como rodar o projeto
 
 ### 1. Subir banco com Docker
 
@@ -80,7 +80,7 @@ docker compose up -d
 
 ---
 
-## 🧪 Testes
+##  Testes
 
 Use Postman ou Insomnia.
 
@@ -91,7 +91,7 @@ Use Postman ou Insomnia.
 
 ---
 
-## 📌 Autor
+##  Autor
 
 Desenvolvido por Jackson De Lima
 

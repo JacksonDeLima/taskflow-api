@@ -1,58 +1,63 @@
 # TaskFlow API
 
-API REST desenvolvida com Java e Spring Boot para gerenciamento de usuários e tarefas, com autenticação JWT, controle de acesso por roles e integração com PostgreSQL.
+![Java](https://img.shields.io/badge/Java-17-blue?logo=java)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5-success?logo=spring)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-blue?logo=postgresql)
+![JWT](https://img.shields.io/badge/JWT-black?logo=json-web-tokens)
+![Swagger](https://img.shields.io/badge/Swagger-85EA2D?logo=swagger&logoColor=black)
 
-## Tecnologias
-- Java 17
-- Spring Boot
-- Spring Security
-- JWT
-- JPA / Hibernate
-- PostgreSQL
-- Docker
-- Swagger
+Uma API REST robusta desenvolvida com **Java** e **Spring Boot** para o gerenciamento de tarefas e usuários. O sistema conta com autenticação segura via **JWT**, controle de acesso baseado em perfis (Roles) e persistência de dados utilizando **PostgreSQL**.
 
-## Funcionalidades
-- Registro e login de usuários
-- Autenticação com JWT
-- Proteção de endpoints
-- CRUD de tarefas
-- Tarefas vinculadas ao usuário autenticado
-- Controle de acesso por perfil
-- Documentação com Swagger
-- Tratamento global de erros
+## 🚀 Funcionalidades
 
-## Endpoints principais
+- **Autenticação e Autorização**: Registro e login de usuários com geração de tokens JWT de forma *stateless*.
+- **Controle de Acesso**: Proteção de rotas baseada em perfis de acesso (`ADMIN` e `USER`).
+- **Gestão de Tarefas (CRUD)**: Criação, listagem, atualização e exclusão de tarefas.
+- **Isolamento de Dados**: Usuários comuns só têm acesso às suas próprias tarefas.
+- **Tratamento de Exceções**: Padronização global de erros para respostas consistentes (usando `@RestControllerAdvice`).
+- **Documentação Interativa**: Interface do Swagger (OpenAPI) disponível para testes e visualização dos endpoints.
 
-### Auth
-- `POST /auth/register`
-- `POST /auth/login`
+## 🛠️ Tecnologias Utilizadas
 
-### Tasks
-- `GET /tasks`
-- `GET /tasks/{id}`
-- `POST /tasks`
-- `PUT /tasks/{id}`
-- `DELETE /tasks/{id}`
+- **Linguagem**: Java 17
+- **Framework**: Spring Boot (Web, Data JPA, Security, Validation)
+- **Segurança**: Spring Security + JWT (Bcrypt para senhas)
+- **Banco de Dados**: PostgreSQL
+- **Migrações / ORM**: Hibernate / JPA
+- **Documentação**: Swagger (SpringDoc OpenAPI)
+- **Utilitários**: Lombok, Docker Compose
 
-## Segurança
-- Senhas criptografadas com BCrypt
-- Autenticação stateless com JWT
-- Usuário só pode acessar as próprias tarefas
-- Rotas ADMIN protegidas por role
+## ⚙️ Como executar localmente
 
-## Como rodar localmente
+### Pré-requisitos
+- Java 17+
+- Maven
+- Docker e Docker Compose
 
-### Banco
+### 1. Suba o banco de dados
 ```bash
 docker compose up -d
-Aplicação
+```
+
+### 2. Execute a aplicação
+```bash
 ./mvnw spring-boot:run
-Swagger
+```
 
-Acesse:
-/swagger-ui.html
+A API estará disponível em `http://localhost:8080`.
 
-Autor
+## 📖 Documentação da API (Swagger)
 
-Jackson De lima
+Com a aplicação em execução, acesse a interface do Swagger para explorar e testar os endpoints:
+
+👉 **[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)**
+
+## 🔐 Endpoints Principais
+
+* **Auth**: `/auth/register` | `/auth/login`
+* **Tarefas**: `/tasks` (GET, POST) | `/tasks/{id}` (GET, PUT, DELETE)
+* **Admin**: `/admin/**` *(Acesso restrito à role ADMIN)*
+
+---
+
+Desenvolvido por **Jackson De lima**
